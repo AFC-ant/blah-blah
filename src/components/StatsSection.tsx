@@ -5,7 +5,7 @@ const stats = [
     icon: "🔍"
   },
   {
-    value: "1000s",
+    value: "1000+",
     label: "Victims Consulted Worldwide",
     icon: "🌍"
   },

@@ -7,8 +7,8 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
     ? {
         title: "Client Success Story",
         subtitle: "Recent Case Recovery",
-        description: "Sarah from California shares how AFC helped her recover funds from a suspicious forex broker that blocked her withdrawals for weeks.",
-        clientName: "Sarah K., California",
+        description: "James from California shares how AFC helped him recover funds from a suspicious forex broker that blocked his withdrawals for weeks.",
+        clientName: "James K., California",
         clientCase: "Forex broker withdrawal delay - $45,000 recovered"
       }
     : {
