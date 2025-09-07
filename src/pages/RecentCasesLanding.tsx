@@ -1,6 +1,7 @@
 import AFCHeader from "@/components/AFCHeader";
 import StatsSection from "@/components/StatsSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
+import VideoSection from "@/components/VideoSection";
 import LeadForm from "@/components/LeadForm";
 import heroImage from "@/assets/hero-recent-cases.jpg";
 
@@ -46,6 +47,7 @@ const RecentCasesLanding = () => {
       </section>
 
       <StatsSection />
+      <VideoSection variant="recent" />
       <HowWeWorkSection />
 
       {/* FAQ Section */}

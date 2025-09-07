@@ -14,23 +14,7 @@ const AFCHeader = () => {
           </div>
         </Link>
         
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link 
-            to="/recent-cases" 
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            Recent Cases
-          </Link>
-          <Link 
-            to="/older-cases" 
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            Older Cases
-          </Link>
-          <button className="btn-secondary">
-            Contact Us
-          </button>
-        </nav>
+        {/* Navigation removed as requested */}
       </div>
     </header>
   );

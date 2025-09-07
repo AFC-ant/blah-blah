@@ -1,6 +1,7 @@
 import AFCHeader from "@/components/AFCHeader";
 import StatsSection from "@/components/StatsSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
+import VideoSection from "@/components/VideoSection";
 import LeadForm from "@/components/LeadForm";
 import heroImage from "@/assets/hero-older-cases.jpg";
 
@@ -95,6 +96,7 @@ const OlderCasesLanding = () => {
       </section>
 
       <StatsSection />
+      <VideoSection variant="older" />
       <HowWeWorkSection />
 
       {/* FAQ Section */}
