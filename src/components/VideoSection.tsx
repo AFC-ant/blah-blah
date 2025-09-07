@@ -1,64 +1,23 @@
-import { Button } from "@/components/ui/button";
-import { useTracking, setupVideoTracking } from "@/hooks/useTracking";
-import { useEffect } from "react";
-
 interface VideoSectionProps {
   variant: "recent" | "older";
 }
 
 const VideoSection = ({ variant }: VideoSectionProps) => {
-  const { trackVideoPlay, trackVideoView } = useTracking();
-  
   const testimonialContent = variant === "recent" 
     ? {
         title: "Client Success Story",
         subtitle: "Recent Case Recovery",
         description: "James from California shares how AFC helped him recover funds from a suspicious forex broker that blocked his withdrawals for weeks.",
         clientName: "James K., California",
-        clientCase: "Forex broker withdrawal delay - $45,000 recovered",
-        videoId: "testimonialVideo",
-        videoName: "Recent Case Testimonial"
+        clientCase: "Forex broker withdrawal delay - $45,000 recovered"
       }
     : {
         title: "Client Success Story", 
         subtitle: "Delayed Case Recovery",
         description: "Mark from Texas explains how AFC provided answers and recovery paths even 8 months after his initial loss to a crypto investment scheme.",
         clientName: "Mark R., Texas", 
-        clientCase: "Crypto investment fraud - Evidence led to partial recovery after 8 months",
-        videoId: "testimonialVideo",
-        videoName: "Older Case Testimonial"
+        clientCase: "Crypto investment fraud - Evidence led to partial recovery after 8 months"
       };
-
-  const explainerContent = {
-    title: "How Our Process Works",
-    subtitle: "Professional Explanation",
-    description: variant === "recent" 
-      ? "Our lead investigator explains the step-by-step process we use to analyze recent fraud cases and identify recovery opportunities within the critical first few months."
-      : "Learn how our team approaches older cases with specialized techniques to uncover evidence and recovery paths even months or years after the initial incident.",
-    videoId: "explainerVideo",
-    videoName: "Process Explainer"
-  };
-
-  // Setup video tracking when component mounts
-  useEffect(() => {
-    const cleanup1 = setupVideoTracking(
-      testimonialContent.videoId,
-      testimonialContent.videoName,
-      trackVideoPlay,
-      trackVideoView
-    );
-    const cleanup2 = setupVideoTracking(
-      explainerContent.videoId,
-      explainerContent.videoName,
-      trackVideoPlay,
-      trackVideoView
-    );
-    
-    return () => {
-      cleanup1?.();
-      cleanup2?.();
-    };
-  }, [testimonialContent.videoId, testimonialContent.videoName, explainerContent.videoId, explainerContent.videoName, trackVideoPlay, trackVideoView]);
 
   return (
     <section className="py-16 section-darker">
@@ -77,19 +36,7 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
           <div className="space-y-6">
             <div className="relative group">
               <div className="relative aspect-video bg-gradient-to-br from-card to-muted rounded-xl overflow-hidden shadow-card border border-border group-hover:shadow-primary transition-all duration-300">
-                {/* Testimonial Video */}
-                <video 
-                  id={testimonialContent.videoId}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  poster="/placeholder.svg"
-                  controls
-                  preload="metadata"
-                >
-                  <source src="#" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                
-                {/* Fallback play button for when video isn't loaded */}
+                {/* Video Placeholder */}
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background/20 to-muted/40">
                   <div className="text-center">
                     <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/30 transition-colors">
@@ -122,19 +69,7 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
           <div className="space-y-6">
             <div className="relative group">
               <div className="relative aspect-video bg-gradient-to-br from-card to-muted rounded-xl overflow-hidden shadow-card border border-border group-hover:shadow-primary transition-all duration-300">
-                {/* Explainer Video */}
-                <video 
-                  id={explainerContent.videoId}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  poster="/placeholder.svg"
-                  controls
-                  preload="metadata"
-                >
-                  <source src="#" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                
-                {/* Fallback play button */}
+                {/* Video Placeholder */}
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background/20 to-muted/40">
                   <div className="text-center">
                     <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/30 transition-colors">
@@ -148,7 +83,7 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
                 
                 {/* Video overlay */}
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
-                  <h3 className="text-primary font-semibold text-lg mb-1">{explainerContent.subtitle}</h3>
+                  <h3 className="text-primary font-semibold text-lg mb-1">Professional Explanation</h3>
                   <p className="text-foreground font-medium mb-2">AFC Investigation Process</p>
                   <p className="text-sm text-muted-foreground">3-minute overview of our methodology</p>
                 </div>
@@ -156,9 +91,12 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
             </div>
             
             <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold mb-3">{explainerContent.title}</h3>
+              <h3 className="text-2xl font-bold mb-3">How Our Process Works</h3>
               <p className="text-muted-foreground leading-relaxed">
-                {explainerContent.description}
+                {variant === "recent" 
+                  ? "Our lead investigator explains the step-by-step process we use to analyze recent fraud cases and identify recovery opportunities within the critical first few months."
+                  : "Learn how our team approaches older cases with specialized techniques to uncover evidence and recovery paths even months or years after the initial incident."
+                }
               </p>
             </div>
           </div>
