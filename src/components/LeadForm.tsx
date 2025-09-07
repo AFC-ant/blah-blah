@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTracking } from "@/hooks/useTracking";
 
 interface LeadFormProps {
   variant: "recent" | "older";
@@ -7,6 +8,7 @@ interface LeadFormProps {
 
 const LeadForm = ({ variant }: LeadFormProps) => {
   const { toast } = useToast();
+  const { trackLeadFormView, trackLeadSubmit, trackLeadSuccess } = useTracking();
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -15,8 +17,16 @@ const LeadForm = ({ variant }: LeadFormProps) => {
     consent: false
   });
 
+  // Track form view on mount
+  useEffect(() => {
+    trackLeadFormView();
+  }, [trackLeadFormView]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Track form submission attempt
+    trackLeadSubmit({ ...formData, variant });
     
     if (!formData.fullName || !formData.phone || !formData.consent) {
       toast({
@@ -29,6 +39,9 @@ const LeadForm = ({ variant }: LeadFormProps) => {
 
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
+    
+    // Track successful form submission
+    trackLeadSuccess({ ...formData, variant });
     
     toast({
       title: "Case review requested successfully",
