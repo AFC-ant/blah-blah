@@ -3,6 +3,7 @@ import StatsSection from "@/components/StatsSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import VideoSection from "@/components/VideoSection";
 import LeadForm from "@/components/LeadForm";
+import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-recent-cases.jpg";
 
 const RecentCasesLanding = () => {
@@ -111,13 +112,30 @@ const RecentCasesLanding = () => {
         </div>
       </div>
 
+      {/* Other Fraud Types Button */}
+      <section className="py-12 px-4 bg-muted/30">
+        <div className="container mx-auto text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Your money was stolen by another type of fraud?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Romance scams, crypto fraud, investment schemes, or other financial fraud? We can help.
+            </p>
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/other-fraud">Submit here please</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-muted py-12 border-t border-border">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold">AFC</span>
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src="/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
               </div>
               <span className="text-lg font-semibold">Anti-Fraud Commission</span>
             </div>
