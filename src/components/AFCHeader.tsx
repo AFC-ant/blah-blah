@@ -14,6 +14,11 @@ const AFCHeader = () => {
           </div>
         </Link>
         
+        <div className="text-right">
+          <p className="text-sm font-medium text-primary">No Advance Fees Required</p>
+          <p className="text-xs text-muted-foreground">Free case review</p>
+        </div>
+        
         {/* Navigation removed as requested */}
       </div>
     </header>

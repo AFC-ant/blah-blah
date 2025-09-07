@@ -11,7 +11,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
     fullName: "",
     phone: "",
     email: "",
-    state: "",
     platform: "",
     timing: "",
     amount: "",
@@ -43,7 +42,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
       fullName: "",
       phone: "",
       email: "",
-      state: "",
       platform: "",
       timing: "",
       amount: "",
@@ -82,20 +80,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
     { value: "over-500k", label: "Over $500,000" }
   ];
 
-  const stateOptions = [
-    { value: "", label: "Select state" },
-    { value: "AL", label: "Alabama" },
-    { value: "AK", label: "Alaska" },
-    { value: "AZ", label: "Arizona" },
-    { value: "AR", label: "Arkansas" },
-    { value: "CA", label: "California" },
-    { value: "CO", label: "Colorado" },
-    { value: "CT", label: "Connecticut" },
-    { value: "DE", label: "Delaware" },
-    { value: "FL", label: "Florida" },
-    { value: "GA", label: "Georgia" },
-    // ... (shortened for brevity, but you'd include all states)
-  ];
 
   return (
     <div className="bg-card border border-border rounded-xl p-6 shadow-card">
@@ -147,26 +131,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
           />
         </div>
 
-        {variant === "recent" && (
-          <div>
-            <label htmlFor="state" className="block text-sm font-medium mb-2">
-              State
-            </label>
-            <select
-              id="state"
-              name="state"
-              value={formData.state}
-              onChange={handleChange}
-              className="form-select w-full"
-            >
-              {stateOptions.map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
 
         <div>
           <label htmlFor="platform" className="block text-sm font-medium mb-2">
