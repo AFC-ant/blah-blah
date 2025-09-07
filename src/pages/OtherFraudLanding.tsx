@@ -163,6 +163,23 @@ const OtherFraudLanding = () => {
         </div>
       </section>
 
+      {/* Broker Fraud Link Button */}
+      <section className="py-12 px-4 bg-muted/30">
+        <div className="container mx-auto text-center">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Issues with a broker or trading platform?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Withdrawal delays, suspicious activity, or blocked access to your funds? We specialize in broker investigations.
+            </p>
+            <Button asChild size="lg" variant="outline" className="text-lg px-8">
+              <a href="/">Submit broker case here</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground p-4 shadow-lg z-30">
         <div className="container mx-auto flex items-center justify-between">
