@@ -10,8 +10,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
-    email: "",
-    platform: "",
     timing: "",
     amount: "",
     consent: false
@@ -20,7 +18,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.fullName || !formData.phone || !formData.platform || !formData.consent) {
+    if (!formData.fullName || !formData.phone || !formData.consent) {
       toast({
         title: "Required fields missing",
         description: "Please fill in all required fields and accept the consent.",
@@ -41,8 +39,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
     setFormData({
       fullName: "",
       phone: "",
-      email: "",
-      platform: "",
       timing: "",
       amount: "",
       consent: false
@@ -112,38 +108,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             onChange={handleChange}
             className="form-input w-full"
             placeholder="Enter your phone number"
-            required
-          />
-        </div>
-
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium mb-2">
-            Email (Optional)
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="form-input w-full"
-            placeholder="Enter your email"
-          />
-        </div>
-
-
-        <div>
-          <label htmlFor="platform" className="block text-sm font-medium mb-2">
-            Platform/Broker <span className="text-destructive">*</span>
-          </label>
-          <input
-            type="text"
-            id="platform"
-            name="platform"
-            value={formData.platform}
-            onChange={handleChange}
-            className="form-input w-full"
-            placeholder="Enter platform or broker name"
             required
           />
         </div>
