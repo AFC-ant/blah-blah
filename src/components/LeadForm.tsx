@@ -58,7 +58,8 @@ const LeadForm = ({ variant }: LeadFormProps) => {
         { value: "", label: "Select timing" },
         { value: "last-7-days", label: "Last 7 days" },
         { value: "last-30-days", label: "Last 30 days" },
-        { value: "last-2-months", label: "Last 2 months" }
+        { value: "last-2-months", label: "Last 2 months" },
+        { value: "2-plus-months", label: "2+ months" }
       ]
     : [
         { value: "", label: "Select timing" },
