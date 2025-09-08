@@ -31,7 +31,7 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto">
+        <div className="max-w-2xl mx-auto">
           {/* Client Testimonial Video */}
           <div className="space-y-6">
             <div className="relative">
@@ -48,48 +48,13 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
                     className="rounded-lg"
                   />
                 </div>
-                
-                {/* Simple overlay with client info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-4 opacity-0 hover:opacity-100 transition-opacity duration-200">
-                  <p className="text-foreground font-medium text-sm mb-1">{testimonialContent.clientName}</p>
-                  <p className="text-xs text-muted-foreground">{testimonialContent.clientCase}</p>
-                </div>
               </div>
             </div>
             
-            <div className="text-center lg:text-left px-2 sm:px-0">
+            <div className="text-center px-2 sm:px-0">
               <h3 className="text-xl sm:text-2xl font-bold mb-3">{testimonialContent.title}</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {testimonialContent.description}
-              </p>
-            </div>
-          </div>
-
-          {/* How We Work Explainer Video */}
-          <div className="space-y-6">
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
-                {/* Video Placeholder */}
-                <div className="relative aspect-video bg-gradient-to-br from-muted/20 to-background/40 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 mx-auto">
-                      <svg className="w-6 h-6 text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <p className="text-primary font-medium text-sm">How We Work</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center lg:text-left px-2 sm:px-0">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">How Our Process Works</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                {variant === "recent" 
-                  ? "Learn about our step-by-step process to analyze recent fraud cases and identify recovery opportunities within the critical first few months."
-                  : "Discover how our team approaches older cases with specialized techniques to uncover evidence and recovery paths even months or years after the initial incident."
-                }
               </p>
             </div>
           </div>

@@ -41,7 +41,7 @@ const StatsSection = () => {
 
         {/* Professional Video Section */}
         <div className="max-w-2xl mx-auto mb-16">
-          <div className="relative overflow-hidden rounded-lg shadow-lg group">
+          <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe 
                 src="https://iframe.mediadelivery.net/embed/492019/d91fe9f8-ddd4-4c22-9ac8-255dac446d0a?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
@@ -52,7 +52,6 @@ const StatsSection = () => {
                 title="Professional Investigation Process"
               />
             </div>
-            
           </div>
         </div>
         
