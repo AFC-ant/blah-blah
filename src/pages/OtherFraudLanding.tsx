@@ -199,7 +199,7 @@ const OtherFraudLanding = () => {
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-12 h-12 flex items-center justify-center">
-              <img src={`${import.meta.env.BASE_URL}lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png`} alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
+              <img src="/blah-blah/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">Anti-Fraud Commission</h3>
