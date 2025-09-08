@@ -17,15 +17,6 @@ const DisclaimerPage = () => {
           </div>
 
           <div className="text-xs md:text-sm text-[#777] leading-relaxed">
-            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6">
-              <h2 className="text-sm md:text-base font-medium text-yellow-800 dark:text-yellow-200 mb-3 text-center">
-                ⚠️ NO RECOVERY GUARANTEE
-              </h2>
-              <p className="text-[11px] md:text-xs font-medium text-yellow-800 dark:text-yellow-200 text-center">
-                We provide investigative analysis and documentation services only. 
-                <strong> No outcome, recovery, or specific result can be guaranteed.</strong>
-              </p>
-            </div>
 
             <section className="mb-6">
               <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Service Nature</h2>
@@ -107,16 +98,18 @@ const DisclaimerPage = () => {
               </ul>
             </section>
 
-            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6">
-              <h3 className="text-sm font-medium text-red-800 dark:text-red-200 mb-2">
-                Final Reminder
-              </h3>
-              <p className="text-[11px] md:text-xs text-red-700 dark:text-red-300">
+            <section className="mb-6">
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Important Notice</h2>
+              <p className="mb-3 text-[11px] md:text-xs">
+                We provide investigative analysis and documentation services only. 
+                No outcome, recovery, or specific result can be guaranteed.
+              </p>
+              <p className="mb-3 text-[11px] md:text-xs">
                 Every fraud case is unique. Past results, statistics, or case studies do not 
                 predict or guarantee future outcomes for your specific situation. We provide 
                 professional analysis and documentation services only.
               </p>
-            </div>
+            </section>
           </div>
 
           <div className="mt-8 pt-6 border-t border-border">
