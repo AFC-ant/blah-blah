@@ -41,7 +41,7 @@ const StatsSection = () => {
 
         {/* Professional Video Section */}
         <div className="max-w-2xl mx-auto mb-16">
-          <div className="relative overflow-hidden rounded-lg shadow-lg">
+          <div className="relative overflow-hidden rounded-lg shadow-lg group">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe 
                 src="https://iframe.mediadelivery.net/embed/492019/848af09f-9b21-4e31-9249-e5329ef8cec6?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
@@ -51,6 +51,13 @@ const StatsSection = () => {
                 allowFullScreen={true}
                 title="Professional Investigation Process"
               />
+            </div>
+            
+            {/* Design overlay */}
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 className="text-primary font-semibold text-lg mb-1">Professional Explanation</h3>
+              <p className="text-foreground font-medium mb-1">AFC Investigation Process</p>
+              <p className="text-sm text-muted-foreground">1-minute overview of our methodology</p>
             </div>
           </div>
         </div>

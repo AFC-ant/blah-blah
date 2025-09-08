@@ -34,25 +34,25 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 max-w-7xl mx-auto">
           {/* Client Testimonial Video */}
           <div className="space-y-6">
-            <div className="relative group">
-              <div className="relative aspect-video bg-gradient-to-br from-card to-muted rounded-xl overflow-hidden shadow-card border border-border group-hover:shadow-primary transition-all duration-300">
-                {/* Video Placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-background/20 to-muted/40">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/30 transition-colors">
-                      <svg className="w-8 h-8 text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <p className="text-primary font-medium">Play Testimonial</p>
-                  </div>
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
+                {/* Actual Testimonial Video */}
+                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+                  <iframe 
+                    src="https://iframe.mediadelivery.net/embed/492019/b46b2662-d115-496d-8f16-9ad6714cc1d2?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
+                    loading="lazy" 
+                    style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                    allowFullScreen={true}
+                    title={`Client Testimonial - ${testimonialContent.clientName}`}
+                    className="rounded-lg"
+                  />
                 </div>
                 
-                {/* Video overlay with client info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-6">
-                  <h3 className="text-primary font-semibold text-lg mb-1">{testimonialContent.subtitle}</h3>
-                  <p className="text-foreground font-medium mb-2">{testimonialContent.clientName}</p>
-                  <p className="text-sm text-muted-foreground">{testimonialContent.clientCase}</p>
+                {/* Simple overlay with client info */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-4 opacity-0 hover:opacity-100 transition-opacity duration-200">
+                  <p className="text-foreground font-medium text-sm mb-1">{testimonialContent.clientName}</p>
+                  <p className="text-xs text-muted-foreground">{testimonialContent.clientCase}</p>
                 </div>
               </div>
             </div>
@@ -67,26 +67,18 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
 
           {/* How We Work Explainer Video */}
           <div className="space-y-6">
-            <div className="relative group">
-              <div className="relative overflow-hidden rounded-xl shadow-card border border-border group-hover:shadow-primary transition-all duration-300">
-                {/* Actual Professional Video */}
-                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                  <iframe 
-                    src="https://iframe.mediadelivery.net/embed/492019/848af09f-9b21-4e31-9249-e5329ef8cec6?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
-                    loading="lazy" 
-                    style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
-                    allowFullScreen={true}
-                    title="AFC Investigation Process - Professional Explanation"
-                    className="rounded-xl"
-                  />
-                </div>
-                
-                {/* Video overlay info */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-4 sm:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className="text-primary font-semibold text-sm sm:text-lg mb-1">Professional Explanation</h3>
-                  <p className="text-foreground font-medium mb-1 text-sm sm:text-base">AFC Investigation Process</p>
-                  <p className="text-xs sm:text-sm text-muted-foreground">1-minute overview of our methodology</p>
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
+                {/* Video Placeholder */}
+                <div className="relative aspect-video bg-gradient-to-br from-muted/20 to-background/40 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-3 mx-auto">
+                      <svg className="w-6 h-6 text-primary ml-1" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                    <p className="text-primary font-medium text-sm">How We Work</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,8 +87,8 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
               <h3 className="text-xl sm:text-2xl font-bold mb-3">How Our Process Works</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {variant === "recent" 
-                  ? "Our lead investigator explains the step-by-step process we use to analyze recent fraud cases and identify recovery opportunities within the critical first few months."
-                  : "Learn how our team approaches older cases with specialized techniques to uncover evidence and recovery paths even months or years after the initial incident."
+                  ? "Learn about our step-by-step process to analyze recent fraud cases and identify recovery opportunities within the critical first few months."
+                  : "Discover how our team approaches older cases with specialized techniques to uncover evidence and recovery paths even months or years after the initial incident."
                 }
               </p>
             </div>

@@ -14,7 +14,7 @@ const OlderCasesLanding = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative pt-20 pb-16 bg-gradient-hero bg-cover bg-center"
+        className="relative pt-24 pb-16 bg-gradient-hero bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-background/80"></div>

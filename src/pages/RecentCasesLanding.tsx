@@ -14,7 +14,7 @@ const RecentCasesLanding = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 bg-gradient-hero bg-cover bg-center min-h-[600px] sm:min-h-[700px]"
+        className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-hero bg-cover bg-center min-h-[600px] sm:min-h-[700px]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-background/80"></div>
