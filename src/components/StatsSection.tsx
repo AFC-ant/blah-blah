@@ -38,6 +38,22 @@ const StatsSection = () => {
             Evidence-based investigations that deliver results for fraud victims worldwide.
           </p>
         </div>
+
+        {/* Professional Video Section */}
+        <div className="max-w-2xl mx-auto mb-16">
+          <div className="relative overflow-hidden rounded-lg shadow-lg">
+            <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+              <iframe 
+                src="https://iframe.mediadelivery.net/embed/492019/848af09f-9b21-4e31-9249-e5329ef8cec6?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
+                loading="lazy" 
+                style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
+                allowFullScreen={true}
+                title="Professional Investigation Process"
+              />
+            </div>
+          </div>
+        </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {stats.map((stat, index) => (
