@@ -53,12 +53,6 @@ const StatsSection = () => {
               />
             </div>
             
-            {/* Design overlay */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/95 to-transparent p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <h3 className="text-primary font-semibold text-lg mb-1">Professional Explanation</h3>
-              <p className="text-foreground font-medium mb-1">AFC Investigation Process</p>
-              <p className="text-sm text-muted-foreground">1-minute overview of our methodology</p>
-            </div>
           </div>
         </div>
         
