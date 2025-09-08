@@ -44,7 +44,7 @@ const StatsSection = () => {
           <div className="relative overflow-hidden rounded-lg shadow-lg group">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe 
-                src="https://iframe.mediadelivery.net/embed/492019/848af09f-9b21-4e31-9249-e5329ef8cec6?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
+                src="https://iframe.mediadelivery.net/embed/492019/d91fe9f8-ddd4-4c22-9ac8-255dac446d0a?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
                 loading="lazy" 
                 style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
                 allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
