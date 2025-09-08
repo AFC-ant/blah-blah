@@ -3,6 +3,8 @@ import StatsSection from "@/components/StatsSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import VideoSection from "@/components/VideoSection";
 import LeadForm from "@/components/LeadForm";
+import TrustBadges from "@/components/TrustBadges";
+import ComplianceFooter from "@/components/ComplianceFooter";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-recent-cases.jpg";
 import { Link } from "react-router-dom";
@@ -51,6 +53,9 @@ const RecentCasesLanding = () => {
       <StatsSection />
       <VideoSection variant="recent" />
       <HowWeWorkSection />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* FAQ Section */}
       <section className="py-12 sm:py-16 section-dark">
@@ -131,28 +136,7 @@ const RecentCasesLanding = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-muted py-12 border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-3 mb-4">
-              <div className="w-8 h-8 flex items-center justify-center">
-                <img src="/blah-blah/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
-              </div>
-              <span className="text-lg font-semibold">Anti-Fraud Commission</span>
-            </div>
-            <p className="text-muted-foreground mb-4">
-              Contact: <a href="mailto:cases@afcinvestigations.com" className="text-primary hover:underline">
-                cases@afcinvestigations.com
-              </a>
-            </p>
-            <p className="text-sm text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <strong>Disclaimer:</strong> We provide investigative analysis and documentation. While some cases have resulted in partial recovery, 
-              no outcome is guaranteed. This site is not affiliated with government or regulators. All investigations are conducted 
-              independently for informational purposes.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <ComplianceFooter />
     </div>
   );
 };

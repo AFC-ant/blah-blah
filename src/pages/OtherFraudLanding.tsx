@@ -6,6 +6,8 @@ import LeadForm from "@/components/LeadForm";
 import StatsSection from "@/components/StatsSection";
 import VideoSection from "@/components/VideoSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
+import TrustBadges from "@/components/TrustBadges";
+import ComplianceFooter from "@/components/ComplianceFooter";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -127,6 +129,9 @@ const OtherFraudLanding = () => {
       
       <HowWeWorkSection />
 
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
       {/* FAQ Section */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
@@ -195,25 +200,8 @@ const OtherFraudLanding = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-muted py-12 px-4 pb-20">
-        <div className="container mx-auto text-center">
-          <div className="flex items-center justify-center space-x-3 mb-6">
-            <div className="w-12 h-12 flex items-center justify-center">
-              <img src="/blah-blah/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold text-foreground">Anti-Fraud Commission</h3>
-              <p className="text-sm text-muted-foreground">Independent Investigations</p>
-            </div>
-          </div>
-          <p className="text-muted-foreground mb-4">
-            Professional fraud investigation services
-          </p>
-          <p className="text-sm text-muted-foreground">
-            *We cannot guarantee recovery results. We provide independent investigation services only.
-          </p>
-        </div>
-      </footer>
+      {/* Footer */}
+      <ComplianceFooter />
     </div>
   );
 };
