@@ -7,6 +7,7 @@ import StatsSection from "@/components/StatsSection";
 import VideoSection from "@/components/VideoSection";
 import HowWeWorkSection from "@/components/HowWeWorkSection";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 declare global {
   interface Window {
@@ -174,7 +175,7 @@ const OtherFraudLanding = () => {
               Withdrawal delays, suspicious activity, or blocked access to your funds? We specialize in broker investigations.
             </p>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/">Submit broker case here</a>
+              <Link to="/">Submit broker case here</Link>
             </Button>
           </div>
         </div>
@@ -198,7 +199,7 @@ const OtherFraudLanding = () => {
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-12 h-12 flex items-center justify-center">
-              <img src="/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
+              <img src={`${import.meta.env.BASE_URL}lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png`} alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <div>
               <h3 className="text-xl font-bold text-foreground">Anti-Fraud Commission</h3>

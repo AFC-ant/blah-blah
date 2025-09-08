@@ -5,6 +5,7 @@ import VideoSection from "@/components/VideoSection";
 import LeadForm from "@/components/LeadForm";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-recent-cases.jpg";
+import { Link } from "react-router-dom";
 
 const RecentCasesLanding = () => {
   return (
@@ -123,7 +124,7 @@ const RecentCasesLanding = () => {
               Romance scams, crypto fraud, investment schemes, or other financial fraud? We can help.
             </p>
             <Button asChild size="lg" variant="outline" className="text-lg px-8">
-              <a href="/other-fraud">Submit here please</a>
+              <Link to="/other-fraud">Submit here please</Link>
             </Button>
           </div>
         </div>
@@ -135,7 +136,7 @@ const RecentCasesLanding = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <div className="w-8 h-8 flex items-center justify-center">
-                <img src="/lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
+                <img src={`${import.meta.env.BASE_URL}lovable-uploads/eb9f24bd-0f13-47c6-9f72-66d1fb56a5b4.png`} alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
               </div>
               <span className="text-lg font-semibold">Anti-Fraud Commission</span>
             </div>
