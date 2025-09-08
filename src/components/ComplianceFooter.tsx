@@ -7,7 +7,7 @@ const ComplianceFooter = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <div className="w-8 h-8 flex items-center justify-center">
-              <img src="./lovable-uploads/bfe0bbad-91f7-4e33-888f-7379e2753293.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
+              <img src="./lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" alt="AFC Logo" className="w-full h-full object-contain rounded-full" />
             </div>
             <span className="text-lg font-semibold">Anti-Fraud Commission</span>
           </div>
