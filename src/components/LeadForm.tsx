@@ -79,8 +79,8 @@ const LeadForm = ({ variant }: LeadFormProps) => {
 
 
   return (
-    <div className="bg-card border border-border rounded-xl p-6 shadow-card">
-      <form onSubmit={handleSubmit} className="space-y-4">
+    <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-card">
+      <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
         <div>
           <label htmlFor="fullName" className="block text-sm font-medium mb-2">
             Full Name <span className="text-destructive">*</span>
@@ -91,7 +91,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
-            className="form-input w-full"
+            className="form-input w-full text-base h-12 sm:h-10"
             placeholder="Enter your full name"
             required
           />
@@ -107,7 +107,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="form-input w-full"
+            className="form-input w-full text-base h-12 sm:h-10"
             placeholder="Enter your phone number"
             required
           />
@@ -122,7 +122,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             name="timing"
             value={formData.timing}
             onChange={handleChange}
-            className="form-select w-full"
+            className="form-select w-full text-base h-12 sm:h-10"
           >
             {timingOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -141,7 +141,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             name="amount"
             value={formData.amount}
             onChange={handleChange}
-            className="form-select w-full"
+            className="form-select w-full text-base h-12 sm:h-10"
           >
             {amountOptions.map(option => (
               <option key={option.value} value={option.value}>
@@ -151,17 +151,17 @@ const LeadForm = ({ variant }: LeadFormProps) => {
           </select>
         </div>
 
-        <div className="flex items-start space-x-3">
+        <div className="flex items-start space-x-3 pt-2">
           <input
             type="checkbox"
             id="consent"
             name="consent"
             checked={formData.consent}
             onChange={handleChange}
-            className="mt-1 w-4 h-4 text-primary bg-input border-border rounded focus:ring-primary focus:ring-2"
+            className="mt-1 w-5 h-5 sm:w-4 sm:h-4 text-primary bg-input border-border rounded focus:ring-primary focus:ring-2 flex-shrink-0"
             required
           />
-          <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
+          <label htmlFor="consent" className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             I consent to AFC contacting me about my case and understand that no outcome is guaranteed. 
             This form is for investigation services only.
           </label>
@@ -169,7 +169,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
 
         <button
           type="submit"
-          className="btn-hero w-full"
+          className="btn-hero w-full text-base sm:text-lg py-3 sm:py-4 mt-6"
         >
           Request Free Case Review
         </button>

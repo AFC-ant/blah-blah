@@ -14,33 +14,33 @@ const RecentCasesLanding = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative pt-20 pb-16 bg-gradient-hero bg-cover bg-center"
+        className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 bg-gradient-hero bg-cover bg-center min-h-[600px] sm:min-h-[700px]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-background/80"></div>
-        <div className="relative container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        <div className="relative container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 Suspicious broker{" "}
                 <span className="text-gradient">delaying withdrawals?</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
                 We analyze suspicious platforms and withdrawal delays. Whether your issue started last week or in recent months, 
                 we provide evidence-based findings — and if recovery paths exist, we highlight them.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="btn-hero">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
+                <button className="btn-hero text-base sm:text-lg py-3 sm:py-4">
                   Request Free Case Review
                 </button>
-                <button className="btn-secondary">
+                <button className="btn-secondary text-base sm:text-lg py-3 sm:py-4">
                   Learn More
                 </button>
               </div>
             </div>
             
-            <div>
-              <div className="bg-background/95 backdrop-blur-sm rounded-xl p-1 shadow-primary">
+            <div className="mt-8 lg:mt-0">
+              <div className="bg-background/95 backdrop-blur-sm rounded-xl p-3 sm:p-1 shadow-primary mx-2 sm:mx-0">
                 <LeadForm variant="recent" />
               </div>
             </div>
@@ -53,43 +53,43 @@ const RecentCasesLanding = () => {
       <HowWeWorkSection />
 
       {/* FAQ Section */}
-      <section className="py-16 section-dark">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-12 sm:py-16 section-dark">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
               Frequently Asked <span className="text-gradient">Questions</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
               Common questions about our investigation process for recent cases.
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
             <div className="card-feature">
-              <h3 className="text-xl font-semibold mb-3 text-primary">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-primary">
                 Do you guarantee recovery?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 No, we provide evidence and documentation. In some cases partial recovery opportunities are identified, 
                 but no outcome is guaranteed. Our focus is on thorough investigation and clear findings.
               </p>
             </div>
             
             <div className="card-feature">
-              <h3 className="text-xl font-semibold mb-3 text-primary">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-primary">
                 How fast is the review process?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 Most cases receive initial findings within 72 hours. Our team works quickly to analyze recent cases 
                 while the trail is still fresh.
               </p>
             </div>
             
             <div className="card-feature">
-              <h3 className="text-xl font-semibold mb-3 text-primary">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-primary">
                 What if my case is older than 2 months?
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                 We still analyze older cases, but earlier action is recommended. For cases over 3 months old, 
                 please visit our dedicated older cases page for specialized handling.
               </p>
@@ -100,13 +100,13 @@ const RecentCasesLanding = () => {
 
       {/* Sticky CTA */}
       <div className="sticky-cta">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-              <h3 className="text-lg font-semibold">Start Free Case Review</h3>
-              <p className="text-sm text-muted-foreground">Average response under 24 hours</p>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-base sm:text-lg font-semibold">Start Free Case Review</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">Average response under 24 hours</p>
             </div>
-            <button className="btn-hero">
+            <button className="btn-hero text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto">
               Get Started Now
             </button>
           </div>
