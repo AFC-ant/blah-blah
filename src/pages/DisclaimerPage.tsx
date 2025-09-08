@@ -19,83 +19,58 @@ const DisclaimerPage = () => {
           <div className="text-xs md:text-sm text-[#777] leading-relaxed">
 
             <section className="mb-6">
-              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Service Nature</h2>
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Service Description</h2>
               <p className="mb-3 text-[11px] md:text-xs">
-                The Anti-Fraud Commission (AFC) is an <strong>independent investigative service</strong> that provides:
+                The Anti-Fraud Commission (AFC) provides <strong>investigative analysis and documentation services only</strong>. 
+                Our service involves reviewing fraud cases, analyzing evidence, and providing documented findings 
+                for informational purposes.
               </p>
-              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>Analysis of fraud cases and circumstances</li>
-                <li>Documentation of findings and evidence</li>
-                <li>Professional investigation reports</li>
-                <li>Identification of potential paths forward (when applicable)</li>
-              </ul>
               <p className="mb-3 text-[11px] md:text-xs">
-                <strong>We are NOT:</strong> A recovery service, legal firm, financial advisor, or government agency.
+                <strong>Important:</strong> We do not guarantee recovery of funds or any specific outcome. 
+                While our analysis may identify potential recovery opportunities in some cases, 
+                this is not assured and depends on many factors beyond our control.
+              </p>
+            </section>
+
+            <section className="mb-6">
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Independent Service</h2>
+              <p className="mb-3 text-[11px] md:text-xs">
+                AFC is an independent investigative service. We are not affiliated with any government 
+                agencies, regulators, law enforcement, or financial institutions. Our investigations 
+                are conducted independently for informational and documentation purposes only.
               </p>
             </section>
 
             <section className="mb-6">
               <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">No Guaranteed Outcomes</h2>
               <p className="mb-3 text-[11px] md:text-xs">
-                While our investigations may reveal recovery opportunities in some cases, this is 
-                <strong> not guaranteed</strong> and depends on numerous factors including:
+                Our service provides analysis and documentation only. We make no guarantees, warranties, 
+                or promises regarding:
               </p>
               <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>Jurisdiction and applicable laws</li>
-                <li>Time elapsed since the fraud occurred</li>
-                <li>Availability and location of assets</li>
-                <li>Complexity of the fraud scheme</li>
-                <li>Cooperation from involved parties</li>
-                <li>Legal and regulatory limitations</li>
-              </ul>
-            </section>
-
-            <section className="mb-6">
-              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Independent Analysis</h2>
-              <p className="mb-3 text-[11px] md:text-xs">
-                AFC operates independently and is not affiliated with:
-              </p>
-              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>Government agencies or regulators</li>
-                <li>Law enforcement organizations</li>
-                <li>Financial institutions or brokers</li>
-                <li>Recovery or asset retrieval companies</li>
-                <li>Legal firms or attorneys</li>
+                <li>Recovery of lost funds</li>
+                <li>Legal outcomes or resolutions</li>
+                <li>Specific timeframes for results</li>
+                <li>Success rates or percentages</li>
               </ul>
               <p className="mb-3 text-[11px] md:text-xs">
-                Our findings are based on available information and evidence at the time of analysis.
+                Past results do not guarantee future outcomes. Each case is unique and subject to 
+                various factors beyond our control.
               </p>
             </section>
 
             <section className="mb-6">
-              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Professional Advice</h2>
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Limitation of Liability</h2>
               <p className="mb-3 text-[11px] md:text-xs">
-                Our analysis and documentation does not constitute:
+                To the maximum extent permitted by law, AFC shall not be liable for any direct, 
+                indirect, incidental, special, consequential, or punitive damages, including but 
+                not limited to loss of profits, data, use, goodwill, or other intangible losses 
+                resulting from your use of our services.
               </p>
-              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>Legal advice or representation</li>
-                <li>Financial or investment guidance</li>
-                <li>Regulatory or compliance advice</li>
-                <li>Guaranteed solutions or outcomes</li>
-              </ul>
               <p className="mb-3 text-[11px] md:text-xs">
-                You should consult with qualified legal and financial professionals regarding 
-                your specific situation and any actions you may consider taking.
+                Our total liability to you for any and all claims shall not exceed the amount 
+                you paid for our services, if any.
               </p>
-            </section>
-
-            <section className="mb-6">
-              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">User Acknowledgment</h2>
-              <p className="mb-3 text-[11px] md:text-xs">
-                By using our services, you acknowledge and agree that:
-              </p>
-              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>You understand our service is investigative analysis only</li>
-                <li>No recovery or specific outcome is guaranteed</li>
-                <li>Results may vary significantly between cases</li>
-                <li>You will seek appropriate professional advice when needed</li>
-                <li>You will not rely solely on our analysis for important decisions</li>
-              </ul>
             </section>
 
             <section className="mb-6">
