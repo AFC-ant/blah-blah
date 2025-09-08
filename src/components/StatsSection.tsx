@@ -40,7 +40,7 @@ const StatsSection = () => {
         </div>
 
         {/* Professional Video Section */}
-        <div className="max-w-4xl mx-auto mb-16">
+        <div className="max-w-2xl mx-auto mb-16">
           <div className="relative overflow-hidden rounded-lg shadow-lg">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe 
