@@ -37,13 +37,8 @@ const ComplianceFooter = () => {
           </div>
         </div>
 
-        {/* Legal Disclaimer */}
+        {/* Footer */}
         <div className="border-t border-border pt-6">
-          <p className="text-sm text-muted-foreground max-w-4xl mx-auto leading-relaxed text-center mb-4">
-            <strong>Legal Disclaimer:</strong> AFC is an independent investigative service. We provide analysis and documentation only. 
-            No recovery outcome is guaranteed. This site is not affiliated with government agencies or regulators. 
-            All investigations are conducted independently for informational purposes.
-          </p>
           <p className="text-xs text-muted-foreground text-center">
             © 2024 Anti-Fraud Commission. All rights reserved.
           </p>
