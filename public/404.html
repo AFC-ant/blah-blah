@@ -4,25 +4,8 @@
     <meta charset="utf-8">
     <title>AFC - Anti-Fraud Commission</title>
     <script type="text/javascript">
-      // HashRouter redirect for direct URL access
-      var l = window.location;
-      var path = l.pathname.slice(1); // Remove leading slash
-      
-      // If there's a path, redirect to hash route
-      if (path) {
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/#/' + path +
-          (l.search || '') +
-          (l.hash || '')
-        );
-      } else {
-        // No path, redirect to home
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          '/#/'
-        );
-      }
+      // Redirect all 404s to home page
+      window.location.replace(window.location.origin + '/#/');
     </script>
   </head>
   <body>
