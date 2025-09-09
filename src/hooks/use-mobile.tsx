@@ -10,9 +10,21 @@ export function useIsMobile() {
     const onChange = () => {
       setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
     };
-    mql.addEventListener("change", onChange);
+
+    // Set initial value
     setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
-    return () => mql.removeEventListener("change", onChange);
+
+    // Cross-browser support for MediaQueryList listeners
+    if (typeof mql.addEventListener === "function") {
+      mql.addEventListener("change", onChange);
+      return () => mql.removeEventListener("change", onChange);
+    } else if (typeof (mql as any).addListener === "function") {
+      (mql as any).addListener(onChange);
+      return () => (mql as any).removeListener(onChange);
+    } else {
+      window.addEventListener("resize", onChange);
+      return () => window.removeEventListener("resize", onChange);
+    }
   }, []);
 
   return !!isMobile;
