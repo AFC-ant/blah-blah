@@ -15,6 +15,23 @@ interface FormSubmission {
   variant: "recent" | "older";
 }
 
+// Input sanitization and validation functions
+const sanitizeString = (input: string): string => {
+  if (typeof input !== 'string') return '';
+  // Remove potential harmful characters and limit length
+  return input.replace(/[<>\"'&]/g, '').trim().substring(0, 200);
+};
+
+const validatePhone = (phone: string): boolean => {
+  // Basic phone validation - adjust regex as needed
+  const phoneRegex = /^[\+]?[1-9][\d\s\-\(\)]{7,15}$/;
+  return phoneRegex.test(phone.replace(/\s/g, ''));
+};
+
+const validateVariant = (variant: string): variant is "recent" | "older" => {
+  return variant === "recent" || variant === "older";
+};
+
 const handler = async (req: Request): Promise<Response> => {
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
@@ -31,14 +48,21 @@ const handler = async (req: Request): Promise<Response> => {
     const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
     if (req.method === "POST") {
-      const { fullName, phone, timing, amount, variant }: FormSubmission = await req.json();
+      const body = await req.json();
+      
+      // Sanitize and validate input data
+      const fullName = sanitizeString(body.fullName || '');
+      const phone = sanitizeString(body.phone || '');
+      const timing = body.timing ? sanitizeString(body.timing) : null;
+      const amount = body.amount ? sanitizeString(body.amount) : null;
+      const variant = body.variant;
 
       console.log("Form submission received:", { fullName, phone, timing, amount, variant });
 
       // Validate required fields
-      if (!fullName || !phone || !variant) {
+      if (!fullName || fullName.length < 2) {
         return new Response(
-          JSON.stringify({ error: "Missing required fields" }),
+          JSON.stringify({ error: "Valid full name is required (minimum 2 characters)" }),
           { 
             status: 400, 
             headers: { "Content-Type": "application/json", ...corsHeaders } 
@@ -46,14 +70,34 @@ const handler = async (req: Request): Promise<Response> => {
         );
       }
 
-      // Save to database
+      if (!phone || !validatePhone(phone)) {
+        return new Response(
+          JSON.stringify({ error: "Valid phone number is required" }),
+          { 
+            status: 400, 
+            headers: { "Content-Type": "application/json", ...corsHeaders } 
+          }
+        );
+      }
+
+      if (!validateVariant(variant)) {
+        return new Response(
+          JSON.stringify({ error: "Invalid variant specified" }),
+          { 
+            status: 400, 
+            headers: { "Content-Type": "application/json", ...corsHeaders } 
+          }
+        );
+      }
+
+      // Save to database using parameterized queries (Supabase handles SQL injection prevention)
       const { data: submission, error: dbError } = await supabase
         .from("form_submissions")
         .insert({
           full_name: fullName,
           phone: phone,
-          timing: timing || null,
-          amount: amount || null,
+          timing: timing,
+          amount: amount,
           variant: variant,
         })
         .select()
@@ -82,11 +126,11 @@ const handler = async (req: Request): Promise<Response> => {
             <h2>New Case Review Request</h2>
             <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <h3>Submission Details:</h3>
-              <p><strong>Name:</strong> ${fullName}</p>
-              <p><strong>Phone:</strong> ${phone}</p>
+              <p><strong>Name:</strong> ${sanitizeString(fullName)}</p>
+              <p><strong>Phone:</strong> ${sanitizeString(phone)}</p>
               <p><strong>Case Type:</strong> ${variant === "recent" ? "Recent Cases" : "Older Cases"}</p>
-              <p><strong>Timing:</strong> ${timing || "Not specified"}</p>
-              <p><strong>Amount at Risk:</strong> ${amount || "Not specified"}</p>
+              <p><strong>Timing:</strong> ${timing ? sanitizeString(timing) : "Not specified"}</p>
+              <p><strong>Amount at Risk:</strong> ${amount ? sanitizeString(amount) : "Not specified"}</p>
               <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
             </div>
             <p>Please follow up with this lead within 24 hours.</p>

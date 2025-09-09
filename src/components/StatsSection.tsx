@@ -44,10 +44,10 @@ const StatsSection = () => {
           <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
             <div style={{ position: 'relative', paddingTop: '56.25%' }}>
               <iframe 
-                src="https://iframe.mediadelivery.net/embed/492019/d91fe9f8-ddd4-4c22-9ac8-255dac446d0a?autoplay=false&loop=true&muted=true&preload=metadata&responsive=true" 
+                src="https://iframe.mediadelivery.net/embed/492019/d91fe9f8-ddd4-4c22-9ac8-255dac446d0a?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
                 loading="lazy" 
                 style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
-                allow="encrypted-media;picture-in-picture;" 
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
                 allowFullScreen={true}
                 title="Professional Investigation Process"
               />

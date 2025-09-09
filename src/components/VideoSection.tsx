@@ -39,10 +39,10 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
                 {/* Actual Testimonial Video */}
                 <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                   <iframe 
-                    src="https://iframe.mediadelivery.net/embed/492019/b46b2662-d115-496d-8f16-9ad6714cc1d2?autoplay=false&loop=false&muted=false&preload=metadata&responsive=true" 
+                    src="https://iframe.mediadelivery.net/embed/492019/b46b2662-d115-496d-8f16-9ad6714cc1d2?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
                     loading="lazy" 
                     style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
-                    allow="encrypted-media;picture-in-picture;" 
+                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
                     allowFullScreen={true}
                     title={`Client Testimonial - ${testimonialContent.clientName}`}
                     className="rounded-lg"
