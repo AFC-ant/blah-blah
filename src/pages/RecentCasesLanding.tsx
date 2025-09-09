@@ -10,6 +10,13 @@ import heroImage from "@/assets/hero-recent-cases.jpg";
 import { Link } from "react-router-dom";
 
 const RecentCasesLanding = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <AFCHeader />
@@ -23,8 +30,8 @@ const RecentCasesLanding = () => {
         <div className="relative container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                Suspicious broker{" "}
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+                <span className="block text-foreground">Suspicious broker</span>
                 <span className="text-gradient">delaying withdrawals?</span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed px-2 sm:px-0">
@@ -32,16 +39,22 @@ const RecentCasesLanding = () => {
                 we provide evidence-based findings — and if recovery paths exist, we highlight them.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-4 sm:px-0">
-                <button className="btn-hero text-base sm:text-lg py-3 sm:py-4">
+                <button 
+                  onClick={() => scrollToSection('lead-form')}
+                  className="btn-hero text-base sm:text-lg py-3 sm:py-4"
+                >
                   Request Free Case Review
                 </button>
-                <button className="btn-secondary text-base sm:text-lg py-3 sm:py-4">
+                <button 
+                  onClick={() => scrollToSection('stats-section')}
+                  className="btn-secondary text-base sm:text-lg py-3 sm:py-4"
+                >
                   Learn More
                 </button>
               </div>
             </div>
             
-            <div className="mt-8 lg:mt-0">
+            <div className="mt-8 lg:mt-0" id="lead-form">
               <div className="bg-background/95 backdrop-blur-sm rounded-xl p-3 sm:p-1 shadow-primary mx-2 sm:mx-0">
                 <LeadForm variant="recent" />
               </div>
@@ -50,7 +63,9 @@ const RecentCasesLanding = () => {
         </div>
       </section>
 
-      <StatsSection />
+      <div id="stats-section">
+        <StatsSection />
+      </div>
       <VideoSection variant="recent" />
       <HowWeWorkSection />
 
@@ -111,7 +126,10 @@ const RecentCasesLanding = () => {
               <h3 className="text-base sm:text-lg font-semibold">Start Free Case Review</h3>
               <p className="text-xs sm:text-sm text-muted-foreground">Average response under 24 hours</p>
             </div>
-            <button className="btn-hero text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto">
+            <button 
+              onClick={() => scrollToSection('lead-form')}
+              className="btn-hero text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto"
+            >
               Get Started Now
             </button>
           </div>

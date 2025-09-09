@@ -19,6 +19,13 @@ declare global {
 }
 
 const OtherFraudLanding = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     // Track page view
     if (window.fbq) {
@@ -51,16 +58,25 @@ const OtherFraudLanding = () => {
                 our independent investigators can help trace your funds and build your case.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="text-lg px-8">
+                <Button 
+                  onClick={() => scrollToSection('lead-form')}
+                  size="lg" 
+                  className="text-lg px-8"
+                >
                   Start Case Review
                 </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8">
+                <Button 
+                  onClick={() => scrollToSection('stats-section')}
+                  variant="outline" 
+                  size="lg" 
+                  className="text-lg px-8"
+                >
                   Learn More
                 </Button>
               </div>
             </div>
             
-            <div className="bg-card p-8 rounded-lg border shadow-lg">
+            <div className="bg-card p-8 rounded-lg border shadow-lg" id="lead-form">
               <LeadForm variant="recent" />
             </div>
           </div>
@@ -123,7 +139,9 @@ const OtherFraudLanding = () => {
         </div>
       </section>
 
-      <StatsSection />
+      <div id="stats-section">
+        <StatsSection />
+      </div>
       
       <VideoSection variant="recent" />
       
@@ -193,7 +211,11 @@ const OtherFraudLanding = () => {
             <p className="font-semibold">Ready to start your investigation?</p>
             <p className="text-sm opacity-90">Free case review - no advance fees</p>
           </div>
-          <Button variant="secondary" size="lg">
+          <Button 
+            onClick={() => scrollToSection('lead-form')}
+            variant="secondary" 
+            size="lg"
+          >
             Start Case Review
           </Button>
         </div>
