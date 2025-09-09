@@ -19,7 +19,7 @@ const ComplianceFooter = () => {
           
           {/* Footer Links */}
           <div className="flex flex-wrap items-center justify-center gap-6 mb-6 text-sm">
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
+            <Link to="/privacy-policy" className="text-foreground hover:text-primary transition-colors font-medium">
               Privacy Policy
             </Link>
             <Link to="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
