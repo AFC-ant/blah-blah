@@ -205,19 +205,20 @@ const OtherFraudLanding = () => {
       </section>
 
       {/* Sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground p-4 shadow-lg z-30">
-        <div className="container mx-auto flex items-center justify-between">
-          <div>
-            <p className="font-semibold">Ready to start your investigation?</p>
-            <p className="text-sm opacity-90">Free case review - no advance fees</p>
+      <div className="sticky-cta">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-base sm:text-lg font-semibold">Start Free Case Review</h3>
+              <p className="text-xs sm:text-sm text-muted-foreground">Average response under 24 hours</p>
+            </div>
+            <button 
+              onClick={() => scrollToSection('lead-form')}
+              className="btn-hero text-sm sm:text-base py-2 sm:py-3 px-4 sm:px-6 w-full sm:w-auto"
+            >
+              Get Started Now
+            </button>
           </div>
-          <Button 
-            onClick={() => scrollToSection('lead-form')}
-            variant="secondary" 
-            size="lg"
-          >
-            Start Case Review
-          </Button>
         </div>
       </div>
 
