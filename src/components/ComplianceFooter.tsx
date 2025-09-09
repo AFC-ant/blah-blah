@@ -7,17 +7,14 @@ const ComplianceFooter = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <div className="w-8 h-8 flex items-center justify-center">
-              <picture>
-                <source srcSet="/lovable-uploads/afc-logo-optimized.webp" type="image/webp" />
-                <img 
-                  src="/lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" 
-                  alt="AFC Logo" 
-                  className="w-full h-full object-contain rounded-full"
-                  width="32"
-                  height="32"
-                  loading="lazy"
-                />
-              </picture>
+              <img 
+                src="/lovable-uploads/915e475d-c64c-4840-bf3a-d34085dcaee7.png" 
+                alt="AFC Logo" 
+                className="w-full h-full object-contain rounded-full"
+                width="32"
+                height="32"
+                loading="lazy"
+              />
             </div>
             <span className="text-lg font-semibold">Anti-Fraud Commission</span>
           </div>
