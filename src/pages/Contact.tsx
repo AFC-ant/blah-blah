@@ -72,10 +72,10 @@ const Contact = () => {
                       For case reviews and general inquiries:
                     </p>
                     <a 
-                      href="mailto:support@afcinvestigations.com" 
+                      href="mailto:support@detectiveblockchain.com" 
                       className="text-primary hover:underline"
                     >
-                      support@afcinvestigations.com
+                      support@detectiveblockchain.com
                     </a>
                   </div>
                 </div>
