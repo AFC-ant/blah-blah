@@ -6,11 +6,17 @@ const AFCHeader = () => {
       <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
           <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
-            <img 
-              src="/lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" 
-              alt="AFC Logo" 
-              className="w-full h-full object-contain rounded-full" 
-            />
+            <picture>
+              <source srcSet="/lovable-uploads/afc-logo-optimized.webp" type="image/webp" />
+              <img 
+                src="/lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" 
+                alt="AFC Logo" 
+                className="w-full h-full object-contain rounded-full"
+                width="48"
+                height="48"
+                loading="eager"
+              />
+            </picture>
           </div>
           <div>
             <h1 className="text-lg sm:text-xl font-bold text-foreground">Anti-Fraud Commission</h1>
