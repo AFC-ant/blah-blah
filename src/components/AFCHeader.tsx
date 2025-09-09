@@ -7,7 +7,7 @@ const AFCHeader = () => {
         <Link to="/" className="flex items-center space-x-2 sm:space-x-3">
           <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
             <img 
-              src="./lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" 
+              src="/lovable-uploads/85f8dfdd-3ac2-40b7-b163-29270897c67f.png" 
               alt="AFC Logo" 
               className="w-full h-full object-contain rounded-full" 
             />
