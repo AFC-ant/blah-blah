@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     assetsDir: "assets",
+    cssCodeSplit: false, // Inline CSS to prevent render blocking
     rollupOptions: {
       output: {
         manualChunks: undefined,
