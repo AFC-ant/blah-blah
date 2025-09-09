@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <title>AFC - Anti-Fraud Commission</title>
     <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      var pathSegmentsToKeep = 1;
+      // HashRouter redirect for direct URL access
       var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      var path = l.pathname.slice(1); // Remove leading slash
+      
+      // If there's a path, redirect to hash route
+      if (path) {
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/#/' + path +
+          (l.search || '') +
+          (l.hash || '')
+        );
+      } else {
+        // No path, redirect to home
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          '/#/'
+        );
+      }
     </script>
   </head>
   <body>
