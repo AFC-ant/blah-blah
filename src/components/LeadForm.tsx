@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 interface LeadFormProps {
   variant: "recent" | "older";
@@ -7,6 +8,7 @@ interface LeadFormProps {
 
 const LeadForm = ({ variant }: LeadFormProps) => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -15,7 +17,7 @@ const LeadForm = ({ variant }: LeadFormProps) => {
     consent: false
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!formData.fullName || !formData.phone || !formData.consent) {
@@ -27,22 +29,53 @@ const LeadForm = ({ variant }: LeadFormProps) => {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Case review requested successfully",
-      description: "Our team will contact you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({
-      fullName: "",
-      phone: "",
-      timing: "",
-      amount: "",
-      consent: false
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-form', {
+        body: {
+          fullName: formData.fullName,
+          phone: formData.phone,
+          timing: formData.timing,
+          amount: formData.amount,
+          variant: variant
+        }
+      });
+
+      if (error) {
+        console.error("Submission error:", error);
+        toast({
+          title: "Submission failed",
+          description: "There was an error submitting your request. Please try again.",
+          variant: "destructive"
+        });
+        return;
+      }
+
+      toast({
+        title: "Case review requested successfully",
+        description: "Our team will contact you within 24 hours.",
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        phone: "",
+        timing: "",
+        amount: "",
+        consent: false
+      });
+
+    } catch (error) {
+      console.error("Unexpected error:", error);
+      toast({
+        title: "Submission failed",
+        description: "There was an unexpected error. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -169,9 +202,10 @@ const LeadForm = ({ variant }: LeadFormProps) => {
 
         <button
           type="submit"
-          className="btn-hero w-full text-base sm:text-lg py-3 sm:py-4 mt-6"
+          disabled={isSubmitting}
+          className="btn-hero w-full text-base sm:text-lg py-3 sm:py-4 mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Request Free Case Review
+          {isSubmitting ? "Submitting..." : "Request Free Case Review"}
         </button>
       </form>
     </div>
