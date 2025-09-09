@@ -23,14 +23,14 @@ const RecentCasesLanding = () => {
       
       {/* Hero Section */}
       <section 
-        className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-hero bg-cover bg-center min-h-[600px] sm:min-h-[700px]"
+        className="relative pt-28 sm:pt-24 pb-12 sm:pb-16 bg-gradient-hero bg-cover bg-center min-h-[600px] sm:min-h-[700px]"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-background/80"></div>
         <div className="relative container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight mt-4 sm:mt-0">
                 <span className="block text-foreground">Suspicious broker</span>
                 <span className="text-gradient">delaying withdrawals?</span>
               </h1>
