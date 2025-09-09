@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
+import { Resend } from "npm:resend@2.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -20,12 +21,12 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    const postmarkApiKey = Deno.env.get("POSTMARK_API_KEY");
+    const resendApiKey = Deno.env.get("RESEND_API_KEY");
     
-    if (!postmarkApiKey) {
-      console.error("POSTMARK_API_KEY is not configured");
+    if (!resendApiKey) {
+      console.error("RESEND_API_KEY is not configured");
       return new Response(
-        JSON.stringify({ error: "Postmark API key not configured" }),
+        JSON.stringify({ error: "Resend API key not configured" }),
         { 
           status: 500, 
           headers: { "Content-Type": "application/json", ...corsHeaders } 
@@ -33,66 +34,47 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
+    const resend = new Resend(resendApiKey);
+
     if (req.method === "POST") {
       const { application_id, full_name, email, phone, message }: ApplicationNotification = await req.json();
 
       console.log("New application notification:", { application_id, full_name, email });
 
-      // Send email notification via Postmark
+      // Send email notification via Resend
       try {
-        const emailResponse = await fetch("https://api.postmarkapp.com/email", {
-          method: "POST",
-          headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json",
-            "X-Postmark-Server-Token": postmarkApiKey,
-          },
-          body: JSON.stringify({
-            From: "noreply@yourapp.com", // Replace with your verified sender address
-            To: "christian.blake@cyberinvestigationsteam.com",
-            Subject: "Someone submitted a new application",
-            HtmlBody: `
-              <h2>New Application Submitted</h2>
-              <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-                <h3>Application Details:</h3>
-                <p><strong>Name:</strong> ${full_name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-                <p><strong>Message:</strong> ${message || "No message provided"}</p>
-                <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
-              </div>
-              <p>Please review this application in your admin dashboard.</p>
-              <hr>
-              <small>Application ID: ${application_id}</small>
-            `,
-            TextBody: `
-New Application Submitted
-
-Name: ${full_name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
-Message: ${message || "No message provided"}
-Submitted: ${new Date().toLocaleString()}
-
-Application ID: ${application_id}
-            `,
-          }),
+        const emailResponse = await resend.emails.send({
+          from: "Application <onboarding@resend.dev>",
+          to: ["christian.blake@cyberinvestigationsteam.com"],
+          subject: "Someone submitted a new application",
+          html: `
+            <h2>New Application Submitted</h2>
+            <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3>Application Details:</h3>
+              <p><strong>Name:</strong> ${full_name}</p>
+              <p><strong>Email:</strong> ${email}</p>
+              <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+              <p><strong>Message:</strong> ${message || "No message provided"}</p>
+              <p><strong>Submitted:</strong> ${new Date().toLocaleString()}</p>
+            </div>
+            <p>Please review this application in your admin dashboard.</p>
+            <hr>
+            <small>Application ID: ${application_id}</small>
+          `,
         });
 
-        if (!emailResponse.ok) {
-          const errorData = await emailResponse.text();
-          console.error("Postmark API error:", errorData);
-          throw new Error(`Postmark API error: ${emailResponse.status} ${errorData}`);
+        if (emailResponse.error) {
+          console.error("Resend API error:", emailResponse.error);
+          throw new Error(`Resend API error: ${emailResponse.error.message}`);
         }
 
-        const emailResult = await emailResponse.json();
-        console.log("Email sent successfully via Postmark:", emailResult);
+        console.log("Email sent successfully via Resend:", emailResponse);
 
         return new Response(
           JSON.stringify({ 
             success: true, 
             message: "Email notification sent successfully",
-            messageId: emailResult.MessageID 
+            messageId: emailResponse.data?.id 
           }),
           {
             status: 200,
