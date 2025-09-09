@@ -76,7 +76,7 @@ const handler = async (req: Request): Promise<Response> => {
       try {
         const emailResponse = await resend.emails.send({
           from: "AFC Notifications <onboarding@resend.dev>",
-          to: ["admin@yourcompany.com"], // Replace with your email
+          to: ["support@detectiveblockchain.com"],
           subject: "New Case Review Request",
           html: `
             <h2>New Case Review Request</h2>

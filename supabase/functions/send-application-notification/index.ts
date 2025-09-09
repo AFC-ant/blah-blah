@@ -45,7 +45,7 @@ const handler = async (req: Request): Promise<Response> => {
       try {
         const emailResponse = await resend.emails.send({
           from: "Application <onboarding@resend.dev>",
-          to: ["christian.blake@cyberinvestigationsteam.com"],
+          to: ["support@detectiveblockchain.com"],
           subject: "Someone submitted a new application",
           html: `
             <h2>New Application Submitted</h2>
