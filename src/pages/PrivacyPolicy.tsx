@@ -79,7 +79,7 @@ const PrivacyPolicy = () => {
                 <li>Request data portability</li>
               </ul>
               <p className="mb-3 text-[11px] md:text-xs">
-                To exercise these rights, contact us at <a href="mailto:privacy@afcinvestigations.com" className="text-primary hover:underline text-[11px] md:text-xs">privacy@afcinvestigations.com</a>.
+                To exercise these rights, contact us at <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">support@detectiveblockchain.com</a>.
               </p>
             </section>
 
@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
               <p className="mb-3 text-[11px] md:text-xs">
-                Email: <a href="mailto:privacy@afcinvestigations.com" className="text-primary hover:underline text-[11px] md:text-xs">privacy@afcinvestigations.com</a>
+                Email: <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">support@detectiveblockchain.com</a>
               </p>
             </section>
 

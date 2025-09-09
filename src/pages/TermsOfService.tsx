@@ -129,7 +129,7 @@ const TermsOfService = () => {
                 If you have questions about these Terms of Service, please contact us at:
               </p>
               <p className="mb-3 text-[11px] md:text-xs">
-                Email: <a href="mailto:legal@afcinvestigations.com" className="text-primary hover:underline text-[11px] md:text-xs">legal@afcinvestigations.com</a>
+                Email: <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">support@detectiveblockchain.com</a>
               </p>
             </section>
           </div>
