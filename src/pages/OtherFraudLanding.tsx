@@ -49,11 +49,11 @@ const OtherFraudLanding = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Victim of Other Types of Fraud?
                 <span className="block text-primary mt-2">We Can Help You Too</span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8">
                 Whether it's romance scams, crypto schemes, fake investments, or other fraudulent activities - 
                 our independent investigators can help trace your funds and build your case.
               </p>
