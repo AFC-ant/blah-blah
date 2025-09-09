@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 const stats = [
   {
     value: "$200M+",
@@ -26,7 +28,7 @@ const stats = [
   }
 ];
 
-const StatsSection = () => {
+const StatsSection = memo(() => {
   return (
     <section className="py-16 section-dark">
       <div className="container mx-auto px-4">
@@ -73,6 +75,8 @@ const StatsSection = () => {
       </div>
     </section>
   );
-};
+});
+
+StatsSection.displayName = 'StatsSection';
 
 export default StatsSection;
