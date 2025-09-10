@@ -22,6 +22,11 @@ export const useAnalytics = () => {
   });
 
   const logEvent = async (event: string, properties: Record<string, any> = {}) => {
+    // Skip tracking if this is a Lovable preview
+    if (window.location.href.includes('__lovable_token')) {
+      return;
+    }
+
     // Get IP address from external service
     let ipAddress = null;
     try {
