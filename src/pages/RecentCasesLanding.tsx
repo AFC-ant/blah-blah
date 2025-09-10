@@ -8,14 +8,25 @@ import ComplianceFooter from "@/components/ComplianceFooter";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-recent-cases.jpg";
 import { Link } from "react-router-dom";
+import { useAnalytics } from "@/hooks/use-analytics";
+import { useEffect } from "react";
 
 const RecentCasesLanding = () => {
+  const { logEvent } = useAnalytics();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    logEvent('page_view', {
+      page: 'recent_cases_landing',
+      title: 'Recent Cases Landing'
+    });
+  }, [logEvent]);
 
   return (
     <div className="min-h-screen bg-background">

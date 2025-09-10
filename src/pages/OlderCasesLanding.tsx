@@ -10,8 +10,18 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import heroImage from "@/assets/hero-older-cases.jpg";
 import { Link } from "react-router-dom";
+import { useAnalytics } from "@/hooks/use-analytics";
+import { useEffect } from "react";
 
 const OlderCasesLanding = () => {
+  const { logEvent } = useAnalytics();
+
+  useEffect(() => {
+    logEvent('page_view', {
+      page: 'older_cases_landing',
+      title: 'Older Cases Landing'
+    });
+  }, [logEvent]);
   return (
     <div className="min-h-screen bg-background">
       <AFCHeader />

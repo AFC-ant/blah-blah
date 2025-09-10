@@ -10,6 +10,7 @@ import TrustBadges from "@/components/TrustBadges";
 import ComplianceFooter from "@/components/ComplianceFooter";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAnalytics } from "@/hooks/use-analytics";
 
 declare global {
   interface Window {
@@ -19,6 +20,8 @@ declare global {
 }
 
 const OtherFraudLanding = () => {
+  const { logEvent } = useAnalytics();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -27,7 +30,13 @@ const OtherFraudLanding = () => {
   };
 
   useEffect(() => {
-    // Track page view
+    // Track page view with new analytics system
+    logEvent('page_view', {
+      page: 'other_fraud_landing',
+      title: 'Other Fraud Landing'
+    });
+
+    // Keep existing Facebook Pixel tracking
     if (window.fbq) {
       window.fbq('track', 'PageView');
     }
