@@ -19,6 +19,7 @@ export type Database = {
           created_at: string
           event_name: string
           id: string
+          ip_address: unknown | null
           properties: Json | null
           session_id: string
           url: string
@@ -28,6 +29,7 @@ export type Database = {
           created_at?: string
           event_name: string
           id?: string
+          ip_address?: unknown | null
           properties?: Json | null
           session_id: string
           url: string
@@ -37,6 +39,7 @@ export type Database = {
           created_at?: string
           event_name?: string
           id?: string
+          ip_address?: unknown | null
           properties?: Json | null
           session_id?: string
           url?: string

@@ -22,6 +22,16 @@ export const useAnalytics = () => {
   });
 
   const logEvent = async (event: string, properties: Record<string, any> = {}) => {
+    // Get IP address from external service
+    let ipAddress = null;
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      ipAddress = data.ip;
+    } catch (error) {
+      console.info('Could not fetch IP address:', error);
+    }
+
     const eventData = {
       event_name: event,
       properties: {
@@ -31,7 +41,8 @@ export const useAnalytics = () => {
       },
       session_id: sessionStart.toString(),
       url: window.location.href,
-      user_agent: navigator.userAgent
+      user_agent: navigator.userAgent,
+      ip_address: ipAddress
     };
 
     // Log to console for development

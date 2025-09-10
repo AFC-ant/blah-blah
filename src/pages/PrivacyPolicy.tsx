@@ -23,6 +23,7 @@ const PrivacyPolicy = () => {
                 <li>Case timing and amount information</li>
                 <li>UTM parameters and referral source for analytics</li>
                 <li>Basic website usage data through analytics cookies</li>
+                <li>IP addresses for security, analytics, and technical purposes</li>
               </ul>
             </section>
 
