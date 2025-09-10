@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 
 interface AnalyticsEvent {
   event: string;
@@ -20,30 +21,30 @@ export const useAnalytics = () => {
     tenMinutes: false,
   });
 
-  const logEvent = (event: string, properties: Record<string, any> = {}) => {
-    const analyticsEvent: AnalyticsEvent = {
-      event,
+  const logEvent = async (event: string, properties: Record<string, any> = {}) => {
+    const eventData = {
+      event_name: event,
       properties: {
         ...properties,
         sessionDuration: Date.now() - sessionStart,
         timestamp: Date.now(),
-        url: window.location.href,
-        userAgent: navigator.userAgent,
       },
-      timestamp: Date.now(),
+      session_id: sessionStart.toString(),
+      url: window.location.href,
+      user_agent: navigator.userAgent
     };
 
     // Log to console for development
-    console.info('Analytics Event:', event, analyticsEvent.properties);
+    console.info('Analytics Event:', event, eventData.properties);
 
-    // Store in localStorage for persistence
-    const existingEvents = JSON.parse(localStorage.getItem('analytics_events') || '[]');
-    existingEvents.push(analyticsEvent);
-    // Keep only last 100 events to prevent localStorage bloat
-    if (existingEvents.length > 100) {
-      existingEvents.shift();
+    // Store in Supabase for website-wide analytics
+    try {
+      await supabase
+        .from('analytics_events')
+        .insert([eventData]);
+    } catch (error) {
+      console.error('Failed to log analytics event:', error);
     }
-    localStorage.setItem('analytics_events', JSON.stringify(existingEvents));
 
     // Track Facebook Pixel if available
     if (typeof window !== 'undefined' && (window as any).fbq) {
@@ -65,10 +66,10 @@ export const useAnalytics = () => {
   // Track time milestones
   useEffect(() => {
     const intervals = [
-      { time: 60000, key: 'oneMinute', event: 'time_on_site_1_minute' },      // 1 minute
-      { time: 120000, key: 'twoMinutes', event: 'time_on_site_2_minutes' },   // 2 minutes
-      { time: 300000, key: 'fiveMinutes', event: 'time_on_site_5_minutes' },  // 5 minutes
-      { time: 600000, key: 'tenMinutes', event: 'time_on_site_10_minutes' },  // 10 minutes
+      { time: 60000, key: 'oneMinute', event: 'time_on_site_1min' },      // 1 minute
+      { time: 120000, key: 'twoMinutes', event: 'time_on_site_2min' },   // 2 minutes
+      { time: 300000, key: 'fiveMinutes', event: 'time_on_site_5min' },  // 5 minutes
+      { time: 600000, key: 'tenMinutes', event: 'time_on_site_10min' },  // 10 minutes
     ];
 
     const timeouts = intervals.map(({ time, key, event }) => {
@@ -131,7 +132,7 @@ export const useAnalytics = () => {
         scrollMilestones.forEach(milestone => {
           if (scrollPercentage >= milestone && !trackedMilestones.has(milestone)) {
             trackedMilestones.add(milestone);
-            logEvent('scroll_depth', {
+            logEvent(`scroll_depth_${milestone}`, {
               percentage: milestone,
               actualPercentage: scrollPercentage,
             });
@@ -157,10 +158,40 @@ export const useAnalytics = () => {
     return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [sessionStart]);
 
+  const getAnalyticsData = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('analytics_events')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (error) {
+        console.error('Failed to fetch analytics data:', error);
+        return [];
+      }
+      
+      return data || [];
+    } catch (error) {
+      console.error('Failed to fetch analytics data:', error);
+      return [];
+    }
+  };
+
+  const clearAnalyticsData = async () => {
+    try {
+      await supabase
+        .from('analytics_events')
+        .delete()
+        .neq('id', '00000000-0000-0000-0000-000000000000'); // Delete all records
+    } catch (error) {
+      console.error('Failed to clear analytics data:', error);
+    }
+  };
+
   return {
     logEvent,
     getSessionDuration: () => Date.now() - sessionStart,
-    getAnalyticsData: () => JSON.parse(localStorage.getItem('analytics_events') || '[]'),
-    clearAnalyticsData: () => localStorage.removeItem('analytics_events'),
+    getAnalyticsData,
+    clearAnalyticsData,
   };
 };
