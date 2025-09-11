@@ -44,6 +44,9 @@ const ComplianceFooter = () => {
             <Link to="/contact" className="text-muted-foreground hover:text-primary transition-colors">
               Contact
             </Link>
+            <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
+              Blog
+            </Link>
           </div>
         </div>
 

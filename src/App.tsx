@@ -16,6 +16,7 @@ const Disclaimer = lazy(() => import('./pages/Disclaimer'));
 const DisclaimerPage = lazy(() => import('./pages/DisclaimerPage'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
 const Admin = lazy(() => import('./pages/Admin'));
 const AnalyticsDashboard = lazy(() => import('./components/AnalyticsDashboard').then(m => ({ default: m.AnalyticsDashboard })));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/disclaimer-page" element={<DisclaimerPage />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/analytics" element={<AnalyticsDashboard />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

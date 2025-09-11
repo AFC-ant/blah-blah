@@ -24,7 +24,26 @@ const PrivacyPolicy = () => {
                 <li>UTM parameters and referral source for analytics</li>
                 <li>Basic website usage data through analytics cookies</li>
                 <li>IP addresses for security, analytics, and technical purposes</li>
+                <li>Google Ads conversion tracking data and advertising identifiers</li>
+                <li>Device information, browser type, and operating system</li>
               </ul>
+            </section>
+
+            <section className="mb-6">
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Google Ads & Tracking</h2>
+              <p className="mb-3 text-[11px] md:text-xs">
+                We use Google Ads conversion tracking to measure the effectiveness of our advertising campaigns. 
+                This includes Google Analytics and Google Tag Manager which may collect:
+              </p>
+              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
+                <li>Page views, session duration, and user interactions</li>
+                <li>Advertising click data and conversion events</li>
+                <li>Cross-device tracking for advertising optimization</li>
+                <li>Remarketing data for targeted advertising</li>
+              </ul>
+              <p className="mb-3 text-[11px] md:text-xs">
+                You can opt-out of Google Ads personalization by visiting <a href="https://adssettings.google.com" className="text-primary hover:underline text-[11px] md:text-xs" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
+              </p>
             </section>
 
             <section className="mb-6">
@@ -81,6 +100,30 @@ const PrivacyPolicy = () => {
               </ul>
               <p className="mb-3 text-[11px] md:text-xs">
                 To exercise these rights, contact us at <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">support@detectiveblockchain.com</a>.
+              </p>
+            </section>
+
+            <section className="mb-6">
+              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">California Consumer Privacy Act (CCPA)</h2>
+              <p className="mb-3 text-[11px] md:text-xs">
+                California residents have additional rights under the CCPA:
+              </p>
+              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
+                <li><strong>Right to Know:</strong> Request information about personal information collected, used, disclosed, or sold</li>
+                <li><strong>Right to Delete:</strong> Request deletion of personal information we have collected</li>
+                <li><strong>Right to Opt-Out:</strong> Opt-out of the sale of personal information (we do not sell personal information)</li>
+                <li><strong>Right to Non-Discrimination:</strong> Not be discriminated against for exercising CCPA rights</li>
+              </ul>
+              <p className="mb-3 text-[11px] md:text-xs">
+                <strong>Categories of Information Collected:</strong> Identifiers (name, phone, email), commercial information (case details), 
+                internet activity (website usage), and professional information (case circumstances).
+              </p>
+              <p className="mb-3 text-[11px] md:text-xs">
+                <strong>Business Purpose:</strong> Case investigation, customer service, security, and service improvement.
+              </p>
+              <p className="mb-3 text-[11px] md:text-xs">
+                To submit a CCPA request, email us at <a href="mailto:privacy@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">privacy@detectiveblockchain.com</a> 
+                with "CCPA Request" in the subject line.
               </p>
             </section>
 
