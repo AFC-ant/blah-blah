@@ -24,27 +24,11 @@ const PrivacyPolicy = () => {
                 <li>UTM parameters and referral source for analytics</li>
                 <li>Basic website usage data through analytics cookies</li>
                 <li>IP addresses for security, analytics, and technical purposes</li>
-                <li>Google Ads conversion tracking data and advertising identifiers</li>
+                <li>Advertising conversion tracking data and identifiers</li>
                 <li>Device information, browser type, and operating system</li>
               </ul>
             </section>
 
-            <section className="mb-6">
-              <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">Google Ads & Tracking</h2>
-              <p className="mb-3 text-[11px] md:text-xs">
-                We use Google Ads conversion tracking to measure the effectiveness of our advertising campaigns. 
-                This includes Google Analytics and Google Tag Manager which may collect:
-              </p>
-              <ul className="list-disc pl-4 mb-3 text-[11px] md:text-xs space-y-1">
-                <li>Page views, session duration, and user interactions</li>
-                <li>Advertising click data and conversion events</li>
-                <li>Cross-device tracking for advertising optimization</li>
-                <li>Remarketing data for targeted advertising</li>
-              </ul>
-              <p className="mb-3 text-[11px] md:text-xs">
-                You can opt-out of Google Ads personalization by visiting <a href="https://adssettings.google.com" className="text-primary hover:underline text-[11px] md:text-xs" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.
-              </p>
-            </section>
 
             <section className="mb-6">
               <h2 className="text-sm md:text-base font-medium mb-3 text-foreground">How We Use Your Information</h2>

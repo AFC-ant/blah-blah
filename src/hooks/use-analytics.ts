@@ -72,13 +72,6 @@ export const useAnalytics = () => {
       });
     }
 
-    // Track Google Analytics if available
-    if (typeof window !== 'undefined' && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: event,
-        ...properties,
-      });
-    }
   };
 
   // Track time milestones
