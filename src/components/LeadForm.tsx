@@ -12,8 +12,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
-    timing: "",
-    amount: "",
     consent: false
   });
 
@@ -36,8 +34,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
         body: {
           fullName: formData.fullName,
           phone: formData.phone,
-          timing: formData.timing,
-          amount: formData.amount,
           variant: variant
         }
       });
@@ -61,8 +57,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
       setFormData({
         fullName: "",
         phone: "",
-        timing: "",
-        amount: "",
         consent: false
       });
 
@@ -85,30 +79,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
       [name]: type === "checkbox" ? (e.target as HTMLInputElement).checked : value
     }));
   };
-
-  const timingOptions = variant === "recent" 
-    ? [
-        { value: "", label: "Select timing" },
-        { value: "last-7-days", label: "Last 7 days" },
-        { value: "last-30-days", label: "Last 30 days" },
-        { value: "last-2-months", label: "Last 2 months" },
-        { value: "2-plus-months", label: "2+ months" }
-      ]
-    : [
-        { value: "", label: "Select timing" },
-        { value: "last-3-months", label: "Last 3 months" },
-        { value: "6-12-months", label: "6-12 months ago" },
-        { value: "more-than-1-year", label: "More than 1 year" }
-      ];
-
-  const amountOptions = [
-    { value: "", label: "Select amount (optional)" },
-    { value: "under-10k", label: "Under $10,000" },
-    { value: "10k-50k", label: "$10,000 - $50,000" },
-    { value: "50k-100k", label: "$50,000 - $100,000" },
-    { value: "100k-500k", label: "$100,000 - $500,000" },
-    { value: "over-500k", label: "Over $500,000" }
-  ];
 
 
   return (
@@ -144,44 +114,6 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             placeholder="Enter your phone number"
             required
           />
-        </div>
-
-        <div>
-          <label htmlFor="timing" className="block text-sm font-medium mb-2">
-            Issue Timing
-          </label>
-          <select
-            id="timing"
-            name="timing"
-            value={formData.timing}
-            onChange={handleChange}
-            className="form-select w-full text-base h-12 sm:h-10"
-          >
-            {timingOptions.map(option => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div>
-          <label htmlFor="amount" className="block text-sm font-medium mb-2">
-            Amount at Risk (Optional)
-          </label>
-          <select
-            id="amount"
-            name="amount"
-            value={formData.amount}
-            onChange={handleChange}
-            className="form-select w-full text-base h-12 sm:h-10"
-          >
-            {amountOptions.map(option => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         <div className="flex items-start space-x-3 pt-2">
