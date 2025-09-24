@@ -3,6 +3,22 @@ interface VideoSectionProps {
 }
 
 const VideoSection = ({ variant }: VideoSectionProps) => {
+  const testimonialContent = variant === "recent" 
+    ? {
+        title: "Client Success Story",
+        subtitle: "Recent Case Recovery",
+        description: "James from California shares how AFC helped him recover funds from a suspicious forex broker that blocked his withdrawals for weeks.",
+        clientName: "James K., California",
+        clientCase: "Forex broker withdrawal delay - $45,000 recovered"
+      }
+    : {
+        title: "Client Success Story", 
+        subtitle: "Delayed Case Recovery",
+        description: "Mark from Texas explains how AFC provided answers and recovery paths even 8 months after his initial loss to a crypto investment scheme.",
+        clientName: "Mark R., Texas", 
+        clientCase: "Crypto investment fraud - Evidence led to partial recovery after 8 months"
+      };
+
   return (
     <section className="py-12 sm:py-16 section-darker">
       <div className="container mx-auto px-4 sm:px-6">
@@ -15,42 +31,12 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
           </p>
         </div>
         
-        <div className="max-w-4xl mx-auto space-y-12">
-          {/* How We Help Video */}
+        <div className="max-w-2xl mx-auto">
+          {/* Client Testimonial Video */}
           <div className="space-y-6">
-            <div className="text-center">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">How We Help</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Understanding our investigation process and how we assist clients in recovering their funds.
-              </p>
-            </div>
             <div className="relative">
               <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
-                <div style={{ position: 'relative', paddingTop: '56.25%' }}>
-                  <iframe 
-                    src="https://iframe.mediadelivery.net/embed/492019/b46b2662-d115-496d-8f16-9ad6714cc1d2?autoplay=false&loop=false&muted=false&preload=true&responsive=true" 
-                    loading="lazy" 
-                    style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
-                    allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
-                    allowFullScreen={true}
-                    title="How We Help - AFC Investigation Process"
-                    className="rounded-lg"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Our Track Record Video */}
-          <div className="space-y-6">
-            <div className="text-center">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">Our Track Record</h3>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Real results from real cases - see the evidence of our successful investigations and recoveries.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="relative overflow-hidden rounded-lg shadow-sm border border-border">
+                {/* Actual Testimonial Video */}
                 <div style={{ position: 'relative', paddingTop: '56.25%' }}>
                   <iframe 
                     src="https://iframe.mediadelivery.net/embed/492019/473c06c8-a799-4db4-8ac8-47b1592bb89b?autoplay=true&loop=true&muted=true&preload=true&responsive=true" 
@@ -58,11 +44,18 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
                     style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
                     allowFullScreen={true}
-                    title="Our Track Record - AFC Success Stories"
+                    title={`Professional Video - ${testimonialContent.clientName}`}
                     className="rounded-lg"
                   />
                 </div>
               </div>
+            </div>
+            
+            <div className="text-center px-2 sm:px-0">
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">{testimonialContent.title}</h3>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                {testimonialContent.description}
+              </p>
             </div>
           </div>
         </div>
