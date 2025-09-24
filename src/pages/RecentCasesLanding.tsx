@@ -77,7 +77,7 @@ const RecentCasesLanding = () => {
       <div id="stats-section">
         <StatsSection />
       </div>
-      <VideoSection />
+      <VideoSection variant="recent" />
       <HowWeWorkSection />
 
       {/* Trust Badges Section */}

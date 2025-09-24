@@ -152,7 +152,7 @@ const OtherFraudLanding = () => {
         <StatsSection />
       </div>
       
-      <VideoSection />
+      <VideoSection variant="recent" />
       
       <HowWeWorkSection />
 
