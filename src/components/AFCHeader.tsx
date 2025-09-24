@@ -26,7 +26,9 @@ const AFCHeader = () => {
         
         <div className="text-right">
           <p className="text-xs sm:text-sm font-medium text-primary">No Advance Fees Required</p>
-          <p className="text-xs text-muted-foreground hidden sm:block">Support: +1 (917) 809-6994</p>
+          <p className="text-xs text-muted-foreground hidden sm:block">
+            Support: <a href="tel:+19178096994" className="hover:text-primary transition-colors">+1 (917) 809-6994</a>
+          </p>
         </div>
         
         {/* Navigation removed as requested */}
