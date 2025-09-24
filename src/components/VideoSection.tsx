@@ -1,33 +1,13 @@
-interface VideoSectionProps {
-  variant: "recent" | "older";
-}
-
-const VideoSection = ({ variant }: VideoSectionProps) => {
-  const testimonialContent = variant === "recent" 
-    ? {
-        title: "Client Success Story",
-        subtitle: "Recent Case Recovery",
-        description: "James from California shares how AFC helped him recover funds from a suspicious forex broker that blocked his withdrawals for weeks.",
-        clientName: "James K., California",
-        clientCase: "Forex broker withdrawal delay - $45,000 recovered"
-      }
-    : {
-        title: "Client Success Story", 
-        subtitle: "Delayed Case Recovery",
-        description: "Mark from Texas explains how AFC provided answers and recovery paths even 8 months after his initial loss to a crypto investment scheme.",
-        clientName: "Mark R., Texas", 
-        clientCase: "Crypto investment fraud - Evidence led to partial recovery after 8 months"
-      };
-
+const VideoSection = () => {
   return (
     <section className="py-12 sm:py-16 section-darker">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
-            See How We <span className="text-gradient">Help</span>
+            Our Track <span className="text-gradient">Record</span>
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2 sm:px-0">
-            Real stories from real clients and an inside look at our investigation process.
+            Evidence-based investigations that deliver results for fraud victims worldwide.
           </p>
         </div>
         
@@ -44,7 +24,7 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
                     style={{ border: 0, position: 'absolute', top: 0, height: '100%', width: '100%' }} 
                     allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
                     allowFullScreen={true}
-                    title={`Professional Video - ${testimonialContent.clientName}`}
+                    title="Our Track Record - Professional Investigation Video"
                     className="rounded-lg"
                   />
                 </div>
@@ -52,9 +32,9 @@ const VideoSection = ({ variant }: VideoSectionProps) => {
             </div>
             
             <div className="text-center px-2 sm:px-0">
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">{testimonialContent.title}</h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">Professional Investigation Results</h3>
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                {testimonialContent.description}
+                See how our evidence-based approach delivers real outcomes for fraud victims worldwide.
               </p>
             </div>
           </div>

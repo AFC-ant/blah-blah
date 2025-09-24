@@ -112,7 +112,7 @@ const OlderCasesLanding = () => {
       </section>
 
       <StatsSection />
-      <VideoSection variant="older" />
+      <VideoSection />
       <HowWeWorkSection />
 
       {/* Trust Badges Section */}
