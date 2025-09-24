@@ -9,6 +9,7 @@ interface LeadFormProps {
 const LeadForm = ({ variant }: LeadFormProps) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showFullConsent, setShowFullConsent] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -126,10 +127,32 @@ const LeadForm = ({ variant }: LeadFormProps) => {
             className="mt-1 w-5 h-5 sm:w-4 sm:h-4 text-primary bg-input border-border rounded focus:ring-primary focus:ring-2 flex-shrink-0"
             required
           />
-          <label htmlFor="consent" className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            I consent to AFC contacting me about my case and understand that no outcome is guaranteed. 
-            This form is for investigation services only.
-          </label>
+          <div className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            <label htmlFor="consent" className="cursor-pointer">
+              I consent to AFC contacting me about my case
+              {!showFullConsent && (
+                <button
+                  type="button"
+                  onClick={() => setShowFullConsent(true)}
+                  className="ml-1 text-primary hover:underline"
+                >
+                  read more
+                </button>
+              )}
+              {showFullConsent && (
+                <>
+                  {" "}and understand that no outcome is guaranteed. This form is for investigation services only.
+                  <button
+                    type="button"
+                    onClick={() => setShowFullConsent(false)}
+                    className="ml-1 text-primary hover:underline"
+                  >
+                    show less
+                  </button>
+                </>
+              )}
+            </label>
+          </div>
         </div>
 
         <button
