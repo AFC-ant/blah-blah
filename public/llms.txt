@@ -1,0 +1,16 @@
+# AFC - Anti-Fraud Commission
+
+> AFC provides independent fraud investigations for victims of suspicious brokers, crypto schemes, and investment fraud. We deliver professional, evidence-based analysis with potential recovery paths identified.
+
+## Pages
+
+- [/](/): Free case review for recent fraud cases. Submit details of your incident for a professional assessment.
+- [/recent-cases](/recent-cases): Free case review for recent fraud cases. Submit details of your incident for a professional assessment.
+- [/older-cases](/older-cases): Investigation services for fraud cases that occurred more than 12 months ago.
+- [/other-fraud](/other-fraud): Case review for non-crypto investment fraud, including Ponzi schemes, forex scams, and broker misconduct.
+- [/about-us](/about-us): Learn about the Anti-Fraud Commission, our mission, methodology, and team.
+- [/contact](/contact): Contact the AFC team for questions, media inquiries, or partnership opportunities.
+- [/blog](/blog): Articles, insights, and updates on fraud prevention, case studies, and industry trends.
+- [/privacy-policy](/privacy-policy): How AFC collects, uses, and protects your personal information.
+- [/terms-of-service](/terms-of-service): Terms and conditions governing use of the AFC website and services.
+- [/disclaimer](/disclaimer): Important disclaimers about our services, results, and legal scope.
