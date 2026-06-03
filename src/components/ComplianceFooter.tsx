@@ -22,8 +22,8 @@ const ComplianceFooter = () => {
             <span className="text-lg font-semibold">Anti-Fraud Commission</span>
           </div>
           <p className="text-muted-foreground mb-6">
-            Contact: <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline">
-              support@detectiveblockchain.com
+            Contact: <a href="mailto:support@investigationsoffice.org" className="text-primary hover:underline">
+              support@investigationsoffice.org
             </a>
           </p>
           
