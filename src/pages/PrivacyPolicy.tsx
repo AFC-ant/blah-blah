@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
                 <strong>Business Purpose:</strong> Case investigation, customer service, security, and service improvement.
               </p>
               <p className="mb-3 text-[11px] md:text-xs">
-                To submit a CCPA request, email us at <a href="mailto:privacy@detectiveblockchain.com" className="text-primary hover:underline text-[11px] md:text-xs">privacy@detectiveblockchain.com</a> 
+                To submit a CCPA request, email us at <a href="mailto:privacy@investigationsoffice.org" className="text-primary hover:underline text-[11px] md:text-xs">privacy@investigationsoffice.org</a> 
                 with "CCPA Request" in the subject line.
               </p>
             </section>
