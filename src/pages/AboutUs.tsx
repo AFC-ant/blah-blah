@@ -142,7 +142,7 @@ const AboutUs = () => {
               <h3 className="text-xl font-semibold mb-2">United States Office</h3>
               <p className="text-muted-foreground">
                 Professional investigation team with secure facilities<br />
-                Contact: <a href="mailto:support@detectiveblockchain.com" className="text-primary hover:underline">support@detectiveblockchain.com</a>
+                Contact: <a href="mailto:support@investigationsoffice.org" className="text-primary hover:underline">support@investigationsoffice.org</a>
               </p>
             </div>
           </div>
