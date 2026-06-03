@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://afc-case-clarity.lovable.app/sitemap.xml
